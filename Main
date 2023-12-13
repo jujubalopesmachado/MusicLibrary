@@ -1,0 +1,19 @@
+
+public class Main {
+    public static void main(String[] args) {
+
+    //Write a Java program to create a class called "MusicLibrary" with a collection
+    // of songs and methods to add and remove songs, and to play a random song.
+
+        MusicLibrary mus1 = new MusicLibrary("Hello" , "Adele" , 9090);
+
+        mus1.AddRecords("Goodbye" , "Frank" , 9191);
+
+        mus1.AddRecords("My Way" , "Frank" , 9292);
+
+        mus1.PlaySong();
+
+
+
+    }
+}
