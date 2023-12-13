@@ -1,0 +1,80 @@
+import java.util.LinkedList;
+import java.util.Random;
+
+public class MusicLibrary {
+
+    //Write a Java program to create a class called "MusicLibrary" with a collection
+    // of songs and methods to add and remove songs, and to play a random song.
+
+    String RecordName;
+
+    String RecordSinger;
+
+    int RecordID;
+
+    LinkedList <String> RecordsCollection = new LinkedList<String>();
+    MusicLibrary(String RecordName, String RecordSinger, int RecordID){
+
+        this.RecordName = RecordName;
+        this.RecordSinger = RecordSinger;
+        this.RecordID = RecordID;
+
+        RecordsCollection.add(RecordName);
+        RecordsCollection.add(RecordSinger);
+
+    }
+
+    public String GetRecordName(){
+
+        return  RecordName;
+    }
+
+    public String GetRecordSinger(){
+
+        return RecordSinger;
+    }
+
+    public int GetRecordID(){
+
+        return RecordID;
+    }
+
+    public void AddRecords(String RecordName,String RecordSinger, int RecordID){
+
+        RecordsCollection.add(RecordName);
+     /*   RecordsCollection.add(RecordSinger);
+        RecordsCollection.add(String.valueOf(RecordID));
+*/
+        System.out.println(RecordsCollection);
+
+    }
+
+    public void RemoveRecords(String RecordName, String RecordSinger, int RecordID){
+
+        RecordsCollection.remove(RecordName);
+       /* RecordsCollection.remove(RecordSinger);
+        RecordsCollection.remove(String.valueOf(RecordID));*/
+
+        System.out.println(RecordsCollection);
+
+    }
+
+    public void PlaySong(){
+        int Size = RecordsCollection.size();
+
+        if (Size > 0 ) {
+
+            Random random = new Random();
+
+            int index = random.nextInt(Size);
+
+            String RandomSong = RecordsCollection.get(index);
+
+            System.out.println(RandomSong + " is playing.");
+        }
+
+    }
+
+
+
+}
